@@ -13,7 +13,7 @@ import {
   X,
   Check
 } from 'lucide-react';
-import scholarshipsData from '../data/scholarships.json';
+// import scholarshipsData from '../data/scholarships.json';
 
 export default function Scholarships() {
   const [scholarships, setScholarships] = useState([]);
@@ -28,8 +28,12 @@ export default function Scholarships() {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    setScholarships(scholarshipsData);
-  }, []);
+  fetch('http://localhost:5000/api/scholarships')
+    .then(res => res.json())
+    .then(data => setScholarships(data))
+    .catch(err => console.error(err));
+}, []);
+
 
   const getLevelColor = (level) => {
     const colors = {

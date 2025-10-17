@@ -2,16 +2,43 @@ import { useEffect, useState } from 'react';
 import {
   MessageCircle,
   ThumbsUp,
-  User,
   Clock,
-  Users,
-  Send,
   X,
   Plus,
-  Tag as TagIcon
+  Send
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
-import communityData from '../data/community.json';
+
+// ---
+// TROUBLESHOOTING:
+// "Why don't I see anything in page community?"
+
+// Here are the most likely reasons you see a blank (empty) page:
+// 1. The fetch to 'http://localhost:5000/api/community' is failing (e.g. API server is off, endpoint doesn't exist, or CORS issue)
+// 2. The posts array is empty after fetch (no data being returned from backend)
+// 3. Rendering logic is correct, but nothing to display (no posts yet)
+// 4. A JavaScript error or crash is happening (invisible error)
+// 5. Your backend returns posts with different shape than expected (e.g. post.id missing)
+
+// ---
+// BASIC DIAGNOSTICS: 
+// Uncomment these lines inside the function to debug visually in your app:
+
+// useEffect(() => {
+//   fetch('http://localhost:5000/api/community')
+//     .then(res => res.json())
+//     .then(data => { 
+//        setPosts(data); 
+//        console.log('Fetched posts:', data);
+//     })
+//     .catch(err => { 
+//       console.error('Fetch failed:', err); 
+//       alert('Fetch failed: ' + err.message);
+//     });
+// }, []);
+
+// In the UI, before rendering your posts, you can add:
+// if (posts.length === 0) return <div className="text-center pt-10 text-lg text-gray-500">No posts found. <br/> (Check API and backend server running?)</div>;
 
 export default function Community() {
   const { user } = useAuth();
@@ -24,10 +51,37 @@ export default function Community() {
     message: '',
   });
   const [newComment, setNewComment] = useState('');
+  const [error, setError] = useState('');
 
+  // Fetch posts from backend with basic error reporting
   useEffect(() => {
-    setPosts(communityData);
-  }, []);
+    fetch('http://localhost:5000/api/community')
+      .then(res => {
+        if(!res.ok) {
+          throw new Error('Network/API error: ' + res.status);
+        }
+        return res.json();
+      })
+      .then(data => {
+        setPosts(data);
+        setError('');
+      })
+      });
+   [];
+
+  // Post a new discussion to backend
+  const handleNewPost = (postData) => {
+    fetch('http://localhost:5000/api/community', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(postData),
+    })
+      .then(res => res.json())
+      .then(newPost => setPosts([newPost, ...posts]))
+      .catch(err => {
+        setError("Failed to add new post: " + err.message);
+      });
+  };
 
   const getCategoryColor = (category) => {
     const colors = {
@@ -47,26 +101,26 @@ export default function Community() {
     const date = new Date(timestamp);
     const now = new Date();
     const diffInHours = Math.floor((now - date) / (1000 * 60 * 60));
-
     if (diffInHours < 1) return 'Just now';
     if (diffInHours < 24) return `${diffInHours}h ago`;
     const diffInDays = Math.floor(diffInHours / 24);
-    if (diffInDays === 1) return '1 day ago';
-    return `${diffInDays} days ago`;
+    return diffInDays === 1 ? '1 day ago' : `${diffInDays} days ago`;
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* Header */}
       <div className="bg-gray-100 text-black py-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 justify-center flex flex-col items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h1 className="text-4xl font-bold mb-4">Student Community</h1>
           <p className="text-xl opacity-90">Connect, share, and learn together with students worldwide</p>
         </div>
       </div>
 
+      {/* Posts List */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="mb-8">
-          <button 
+          <button
             onClick={() => setShowNewPost(true)}
             className="w-full px-6 py-4 bg-white border-2 border-dashed border-gray-300 rounded-lg text-gray-600 font-medium hover:border-purple-400 hover:text-purple-600 transition-colors flex items-center justify-center gap-2"
           >
@@ -74,51 +128,55 @@ export default function Community() {
             Start a New Discussion
           </button>
         </div>
-
         <div className="space-y-4">
-          {posts.map((post) => (
+          {/* KEY DEBUG: Post list status */}
+          {!error && posts.length === 0 && (
+            <div className="text-center text-gray-400 text-lg p-10">
+              No posts found.<br />
+              <span className="text-sm">If you're expecting posts, check if your backend API is running and returns data.<br />
+              (Open browser devtools Network tab to check the fetch request!)</span>
+            </div>
+          )}
+          {posts.map((post, i) => (
             <article
-              key={post.id}
+              key={post.id ?? post._id ?? i}
               className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-200 p-6"
             >
               <div className="flex items-start gap-4">
                 <div className="flex-shrink-0">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white font-semibold">
-                    {post.avatar}
+                    {post.avatar || "?"}
                   </div>
                 </div>
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="font-semibold text-gray-900">{post.username}</span>
+                    <span className="font-semibold text-gray-900">{post.username || "Anonymous"}</span>
                     <span className="text-gray-400">•</span>
                     <div className="flex items-center gap-1 text-sm text-gray-500">
                       <Clock className="w-3 h-3" />
-                      <span>{formatTimeAgo(post.timestamp)}</span>
+                      <span>
+                        {post.timestamp ? formatTimeAgo(post.timestamp) : "unknown time"}
+                      </span>
                     </div>
                     <span className={`text-xs font-medium px-3 py-1 rounded-full ${getCategoryColor(post.category)}`}>
-                      {post.category}
+                      {post.category || "General"}
                     </span>
                   </div>
 
-                  <h2 className="text-lg font-semibold text-gray-900 mb-2">
-                    {post.topic}
-                  </h2>
-
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {post.message}
-                  </p>
+                  <h2 className="text-lg font-semibold text-gray-900 mb-2">{post.topic || <span className="italic text-gray-400">No topic</span>}</h2>
+                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">{post.message || <span className="italic text-gray-300">No message</span>}</p>
 
                   <div className="flex items-center gap-6">
                     <button className="flex items-center gap-2 text-sm text-gray-600 hover:text-purple-600 transition-colors group">
                       <MessageCircle className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                      <span className="font-medium">{post.replies} replies</span>
+                      <span className="font-medium">{post.replies ?? 0} replies</span>
                     </button>
                     <button className="flex items-center gap-2 text-sm text-gray-600 hover:text-pink-600 transition-colors group">
                       <ThumbsUp className="w-4 h-4 group-hover:scale-110 transition-transform" />
-                      <span className="font-medium">{post.likes} likes</span>
+                      <span className="font-medium">{post.likes ?? 0} likes</span>
                     </button>
-                    <button 
+                    <button
                       onClick={() => setSelectedPost(post)}
                       className="text-sm font-medium text-purple-600 hover:text-purple-700 transition-colors ml-auto"
                     >
@@ -139,74 +197,62 @@ export default function Community() {
             <div className="p-6 space-y-6">
               <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-bold text-gray-900">Start a New Discussion</h3>
-                <button 
-                  onClick={() => setShowNewPost(false)}
-                  className="p-2 hover:bg-gray-100 rounded-full transition-colors"
-                >
+                <button onClick={() => setShowNewPost(false)} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
                   <X className="w-6 h-6 text-gray-500" />
                 </button>
               </div>
 
-              <form className="space-y-4" onSubmit={(e) => {
-                e.preventDefault();
-                const newPostData = {
-                  ...newPost,
-                  id: Date.now(),
-                  username: user?.name || 'Anonymous',
-                  avatar: user?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'A',
-                  replies: 0,
-                  likes: 0,
-                  timestamp: new Date().toISOString(),
-                };
-                setPosts([newPostData, ...posts]);
-                setShowNewPost(false);
-                setNewPost({ topic: '', category: 'Academic Advice', message: '' });
-              }}>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Topic</label>
-                  <input
-                    type="text"
-                    required
-                    value={newPost.topic}
-                    onChange={(e) => setNewPost(prev => ({ ...prev, topic: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="What would you like to discuss?"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                  <select
-                    value={newPost.category}
-                    onChange={(e) => setNewPost(prev => ({ ...prev, category: e.target.value }))}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                  >
-                    <option>Academic Advice</option>
-                    <option>Study Groups</option>
-                    <option>Resources</option>
-                    <option>Social</option>
-                    <option>Career</option>
-                    <option>Grad School</option>
-                    <option>Jobs</option>
-                    <option>Wellness</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                  <textarea
-                    required
-                    value={newPost.message}
-                    onChange={(e) => setNewPost(prev => ({ ...prev, message: e.target.value }))}
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-                    placeholder="Share your thoughts..."
-                  />
-                </div>
-
+              <form
+                className="space-y-4"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const newPostData = {
+                    ...newPost,
+                    username: user?.name || 'Anonymous',
+                    avatar: user?.name?.split(' ').map(n => n[0]).join('').toUpperCase() || 'A',
+                    replies: 0,
+                    likes: 0,
+                    timestamp: new Date().toISOString(),
+                  };
+                  handleNewPost(newPostData);
+                  setShowNewPost(false);
+                  setNewPost({ topic: '', category: 'Academic Advice', message: '' });
+                }}
+              >
+                <input
+                  type="text"
+                  required
+                  value={newPost.topic}
+                  onChange={(e) => setNewPost(prev => ({ ...prev, topic: e.target.value }))}
+                  placeholder="Topic"
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                />
+                <select
+                  value={newPost.category}
+                  onChange={(e) => setNewPost(prev => ({ ...prev, category: e.target.value }))}
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                >
+                  <option>Academic Advice</option>
+                  <option>Study Groups</option>
+                  <option>Resources</option>
+                  <option>Social</option>
+                  <option>Career</option>
+                  <option>Grad School</option>
+                  <option>Jobs</option>
+                  <option>Wellness</option>
+                </select>
+                <textarea
+                  required
+                  value={newPost.message}
+                  onChange={(e) => setNewPost(prev => ({ ...prev, message: e.target.value }))}
+                  rows={4}
+                  placeholder="Message"
+                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-500"
+                />
                 <button
                   type="submit"
-                  className="w-full py-3 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition-colors"
+                  disabled={!newPost.topic.trim() || !newPost.message.trim()}
+                  className="w-full py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50"
                 >
                   Post Discussion
                 </button>
@@ -215,7 +261,6 @@ export default function Community() {
           </div>
         </div>
       )}
-
       {/* Discussion Details Modal */}
       {selectedPost && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">

@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react';
 import { Calendar, User, Tag, ArrowRight, BookOpen, X } from 'lucide-react';
-import blogsData from '../data/blogs.json';
 
 export default function Blogs() {
   const [blogs, setBlogs] = useState([]);
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
-    setBlogs(blogsData);
-  }, []);
+  // Fetch posts from your backend API
+  fetch('http://localhost:5000/api/blogs') // Change the URL to your API endpoint
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch posts');
+      console.log(res);
+      
+      return res.json();
+    })
+    .then(data => setBlogs(data))
+    .catch(err => console.error('Error fetching posts:', err));
+}, []);
 
   const getCategoryColor = (category) => {
     const colors = {

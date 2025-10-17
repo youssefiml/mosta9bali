@@ -51,12 +51,6 @@ export default function Home() {
               >
                 Explore Resources
               </Link>
-              <Link
-                to="/community"
-                className="px-8 py-3 bg-white text-blue-600 border-2 border-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors"
-              >
-                Join Community
-              </Link>
             </div>
           </div>
         </div>

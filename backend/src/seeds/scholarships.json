@@ -1,18 +1,82 @@
 [
   {
-    "title": "International Excellence Scholarship",
-    "provider": "Global Foundation",
-    "amount": "$5000",
-    "deadline": "2026-06-30",
-    "url": "https://example.org/scholarships/iex",
-    "description": "Support for international students."
+    "title": "Gates Cambridge Scholarship",
+    "country": "United Kingdom",
+    "level": "Graduate",
+    "amount": "Full tuition + stipend",
+    "deadline": "2025-10-15",
+    "description": "Prestigious scholarship for outstanding applicants from outside the UK to pursue a full-time postgraduate degree at Cambridge. Moroccan students are eligible."
   },
   {
-    "title": "STEM Leaders Award",
-    "provider": "STEM Trust",
-    "amount": "$3000",
-    "deadline": "2026-03-15",
-    "url": "https://example.org/scholarships/stem-leaders",
-    "description": "For outstanding STEM students."
+    "title": "Fulbright Foreign Student Program",
+    "country": "United States",
+    "level": "Graduate",
+    "amount": "Full funding",
+    "deadline": "2025-09-30",
+    "description": "Provides grants for international students, including Moroccans, to study and conduct research in the United States at accredited institutions."
+  },
+  {
+    "title": "Erasmus Mundus Joint Masters",
+    "country": "European Union",
+    "level": "Masters",
+    "amount": "€25,000/year",
+    "deadline": "2025-12-01",
+    "description": "High-quality international study programmes jointly delivered by consortia of European higher education institutions. Open to Moroccan students."
+  },
+  {
+    "title": "DAAD Scholarship Germany",
+    "country": "Germany",
+    "level": "Graduate/PhD",
+    "amount": "€934/month + benefits",
+    "deadline": "2025-11-15",
+    "description": "Scholarships for international students, including Moroccans, at German universities with excellent academic records."
+  },
+  {
+    "title": "Chevening Scholarships",
+    "country": "United Kingdom",
+    "level": "Masters",
+    "amount": "Full funding",
+    "deadline": "2025-11-07",
+    "description": "UK government's global scholarship programme for future leaders, including Moroccan applicants, to pursue one-year master's degrees in the UK."
+  },
+  {
+    "title": "Australia Awards Scholarship",
+    "country": "Australia",
+    "level": "Undergraduate/Graduate",
+    "amount": "Full tuition + living allowance",
+    "deadline": "2025-08-31",
+    "description": "Long-term development awards for citizens of participating countries, including Morocco, to undertake full-time study at Australian universities."
+  },
+  {
+    "title": "Swiss Government Excellence Scholarships",
+    "country": "Switzerland",
+    "level": "PhD/Postdoc",
+    "amount": "CHF 1,920/month",
+    "deadline": "2025-12-15",
+    "description": "Research scholarships for foreign scholars and artists, including Moroccan students, holding a master's degree or equivalent."
+  },
+  {
+    "title": "Rhodes Scholarship",
+    "country": "United Kingdom",
+    "level": "Graduate",
+    "amount": "Full funding",
+    "deadline": "2025-10-01",
+    "description": "The oldest and most celebrated international fellowship, bringing students from around the world, including Morocco, to Oxford University."
+  },
+  {
+    "title": "Moroccan Government Scholarships (AMCI)",
+    "country": "Morocco",
+    "level": "Undergraduate/Graduate",
+    "amount": "Full tuition + stipend",
+    "deadline": "2025-07-04",
+    "description": "Scholarships funded by the Moroccan Agency for International Cooperation for Moroccan and international students to study in Morocco."
+  },
+  {
+    "title": "University Mohammed VI Polytechnic (UM6P) Scholarships",
+    "country": "Morocco",
+    "level": "Undergraduate/Graduate",
+    "amount": "Full tuition + living allowance",
+    "deadline": "2025-09-30",
+    "description": "UM6P scholarships aim to support Moroccan and African students, especially women, for various academic programs."
   }
 ]

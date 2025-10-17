@@ -1,62 +1,56 @@
 [
   {
-    "id": 1,
-    "name": "Stanford University",
-    "city": "Stanford, CA",
-    "country": "United States",
-    "programs": ["Computer Science", "Engineering", "Business", "Medicine"],
+    "name": "University Mohammed V",
+    "city": "Rabat",
+    "country": "Morocco",
+    "programs": ["Law", "Engineering", "Medicine", "Sciences"],
+    "type": "Public University",
+    "acceptance": "50%",
+    "contact": "info@um5.ac.ma"
+  },
+  {
+    "name": "Cadi Ayyad University",
+    "city": "Marrakech",
+    "country": "Morocco",
+    "programs": ["Computer Science", "Engineering", "Business", "Arts & Humanities"],
+    "type": "Public University",
+    "acceptance": "55%",
+    "contact": "contact@uca.ma"
+  },
+  {
+    "name": "Hassan II University",
+    "city": "Casablanca",
+    "country": "Morocco",
+    "programs": ["Engineering", "Law", "Economics", "Medicine"],
+    "type": "Public University",
+    "acceptance": "60%",
+    "contact": "contact@uh2c.ac.ma"
+  },
+  {
+    "name": "Al Akhawayn University",
+    "city": "Ifrane",
+    "country": "Morocco",
+    "programs": ["Business Administration", "Computer Science", "International Relations"],
+    "type": "Private University",
+    "acceptance": "35%",
+    "contact": "admissions@aui.ma"
+  },
+  {
+    "name": "University Hassan I",
+    "city": "Settat",
+    "country": "Morocco",
+    "programs": ["Agriculture", "Engineering", "Sciences", "Law"],
+    "type": "Public University",
+    "acceptance": "65%",
+    "contact": "info@uh1.ac.ma"
+  },
+  {
+    "name": "University Mohammed VI Polytechnic (UM6P)",
+    "city": "Benguerir",
+    "country": "Morocco",
+    "programs": ["Engineering", "Mining", "Energy", "Business"],
     "type": "Private Research University",
-    "acceptance": "4%",
-    "contact": "admissions@stanford.edu"
-  },
-  {
-    "id": 2,
-    "name": "University of Cambridge",
-    "city": "Cambridge",
-    "country": "United Kingdom",
-    "programs": ["Natural Sciences", "Engineering", "Law", "Mathematics"],
-    "type": "Public Research University",
-    "acceptance": "18%",
-    "contact": "admissions@cam.ac.uk"
-  },
-  {
-    "id": 3,
-    "name": "National University of Singapore",
-    "city": "Singapore",
-    "country": "Singapore",
-    "programs": ["Business", "Computing", "Engineering", "Life Sciences"],
-    "type": "Public Research University",
-    "acceptance": "5%",
-    "contact": "admissions@nus.edu.sg"
-  },
-  {
-    "id": 4,
-    "name": "ETH Zurich",
-    "city": "Zurich",
-    "country": "Switzerland",
-    "programs": ["Engineering", "Architecture", "Physics", "Mathematics"],
-    "type": "Public Research University",
-    "acceptance": "8%",
-    "contact": "admissions@ethz.ch"
-  },
-  {
-    "id": 5,
-    "name": "University of Toronto",
-    "city": "Toronto, ON",
-    "country": "Canada",
-    "programs": ["Medicine", "Engineering", "Arts & Sciences", "Business"],
-    "type": "Public Research University",
-    "acceptance": "43%",
-    "contact": "admissions@utoronto.ca"
-  },
-  {
-    "id": 6,
-    "name": "University of Melbourne",
-    "city": "Melbourne",
-    "country": "Australia",
-    "programs": ["Arts", "Commerce", "Engineering", "Medicine"],
-    "type": "Public Research University",
-    "acceptance": "70%",
-    "contact": "admissions@unimelb.edu.au"
+    "acceptance": "40%",
+    "contact": "info@um6p.ma"
   }
 ]

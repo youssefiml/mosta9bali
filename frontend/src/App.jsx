@@ -29,11 +29,7 @@ function App() {
               <Route path="/scholarships" element={<Scholarships />} />
               <Route
                 path="/community"
-                element={
-                  <ProtectedRoute>
-                    <Community />
-                  </ProtectedRoute>
-                }
+                element={<Community />}
               />
               <Route
                 path="/admin/*"

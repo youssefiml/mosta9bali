@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 import { MapPin, GraduationCap, Mail, TrendingUp, Globe, Award, School, Users, X } from 'lucide-react';
-import schoolsData from '../data/schools.json';
+// import schoolsData from '../data/schools.json';
 
 export default function Schools() {
   const [schools, setSchools] = useState([]);
   const [selectedSchool, setSelectedSchool] = useState(null);
 
   useEffect(() => {
-    setSchools(schoolsData);
+fetch('http://localhost:5000/api/schools')
+    .then(res => res.json())
+    .then(data => setSchools(data))
+    .catch(err => console.error(err));
   }, []);
 
   return (

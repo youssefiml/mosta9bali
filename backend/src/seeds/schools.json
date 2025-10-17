@@ -1,16 +1,56 @@
 [
   {
-    "name": "Global University",
-    "country": "USA",
-    "city": "New York",
-    "website": "https://globaluniversity.example",
-    "description": "A leading university with global programs."
+    "name": "University Mohammed V",
+    "city": "Rabat",
+    "country": "Morocco",
+    "programs": ["Law", "Engineering", "Medicine", "Sciences"],
+    "type": "Public University",
+    "acceptance": "50%",
+    "contact": "info@um5.ac.ma"
   },
   {
-    "name": "Tech Institute",
-    "country": "Germany",
-    "city": "Berlin",
-    "website": "https://techinstitute.example",
-    "description": "Technology-focused institution."
+    "name": "Cadi Ayyad University",
+    "city": "Marrakech",
+    "country": "Morocco",
+    "programs": ["Computer Science", "Engineering", "Business", "Arts & Humanities"],
+    "type": "Public University",
+    "acceptance": "55%",
+    "contact": "contact@uca.ma"
+  },
+  {
+    "name": "Hassan II University",
+    "city": "Casablanca",
+    "country": "Morocco",
+    "programs": ["Engineering", "Law", "Economics", "Medicine"],
+    "type": "Public University",
+    "acceptance": "60%",
+    "contact": "contact@uh2c.ac.ma"
+  },
+  {
+    "name": "Al Akhawayn University",
+    "city": "Ifrane",
+    "country": "Morocco",
+    "programs": ["Business Administration", "Computer Science", "International Relations"],
+    "type": "Private University",
+    "acceptance": "35%",
+    "contact": "admissions@aui.ma"
+  },
+  {
+    "name": "University Hassan I",
+    "city": "Settat",
+    "country": "Morocco",
+    "programs": ["Agriculture", "Engineering", "Sciences", "Law"],
+    "type": "Public University",
+    "acceptance": "65%",
+    "contact": "info@uh1.ac.ma"
+  },
+  {
+    "name": "University Mohammed VI Polytechnic (UM6P)",
+    "city": "Benguerir",
+    "country": "Morocco",
+    "programs": ["Engineering", "Mining", "Energy", "Business"],
+    "type": "Private Research University",
+    "acceptance": "40%",
+    "contact": "info@um6p.ma"
   }
 ]

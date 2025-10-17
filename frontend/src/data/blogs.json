@@ -1,50 +1,170 @@
 [
   {
-    "id": 1,
-    "title": "Top 10 Study Techniques for Academic Success",
+    "title": "Top 10 Study Tips for Moroccan Students",
     "category": "Study Tips",
-    "author": "Dr. Sarah Johnson",
-    "date": "2024-03-15",
-    "preview": "Discover proven study methods that can help you retain information better and perform excellently in your exams. From active recall to spaced repetition, learn the techniques top students use."
+    "author": "Dr. Sara El Amrani",
+    "date": "2025-10-10",
+    "preview": "Learn the best strategies to retain information and excel in your exams. From active recall to spaced repetition, discover the techniques top students use in Morocco."
   },
   {
-    "id": 2,
-    "title": "Navigating College Applications: A Complete Guide",
+    "title": "Complete Guide to University Admissions in Morocco",
     "category": "Admissions",
-    "author": "Michael Chen",
-    "date": "2024-03-12",
-    "preview": "Learn everything you need to know about the college application process, from choosing the right schools to crafting compelling personal statements that stand out."
+    "author": "Mohamed Benali",
+    "date": "2025-10-08",
+    "preview": "Everything you need to know about applying to Moroccan universities, from choosing the right program to crafting a strong personal statement."
   },
   {
-    "id": 3,
-    "title": "STEM Careers: Opportunities in 2024",
+    "title": "STEM Career Opportunities in Morocco 2025",
     "category": "Career Planning",
-    "author": "Prof. James Wilson",
-    "date": "2024-03-10",
-    "preview": "Explore the fastest-growing STEM careers and learn what skills you need to develop now to succeed in tomorrow's technology-driven workplace."
+    "author": "Prof. Youssef Idrissi",
+    "date": "2025-10-06",
+    "preview": "Explore the fastest-growing STEM careers in Morocco and learn the skills you need to thrive in a technology-driven world."
   },
   {
-    "id": 4,
-    "title": "Balancing Academics and Mental Health",
+    "title": "Balancing Studies and Mental Health for Moroccan Students",
     "category": "Wellness",
-    "author": "Dr. Emily Rodriguez",
-    "date": "2024-03-08",
-    "preview": "Mental health is just as important as academic success. Learn practical strategies to manage stress, avoid burnout, and maintain a healthy balance during your academic journey."
+    "author": "Dr. Amina Chouaib",
+    "date": "2025-10-04",
+    "preview": "Mental health is as important as academic success. Learn practical strategies to manage stress, avoid burnout, and maintain a healthy balance during your studies."
   },
   {
-    "id": 5,
-    "title": "International Study: Making the Move Abroad",
+    "title": "Studying Abroad: Tips for Moroccan Students",
     "category": "International",
-    "author": "Anna Kowalski",
-    "date": "2024-03-05",
-    "preview": "Thinking about studying abroad? Get insights on choosing the right country, preparing for cultural differences, and making the most of your international education experience."
+    "author": "Khalid El Fassi",
+    "date": "2025-10-02",
+    "preview": "Thinking of studying abroad? Get insights on selecting the right country, preparing for cultural differences, and making the most of your international experience."
   },
   {
-    "id": 6,
-    "title": "Financial Aid 101: Understanding Your Options",
+    "title": "Financial Aid for Moroccan Students: How to Make the Most",
     "category": "Financial Aid",
-    "author": "Robert Taylor",
-    "date": "2024-03-01",
-    "preview": "Navigate the complex world of financial aid with confidence. Learn about grants, loans, work-study programs, and how to maximize your financial aid package."
+    "author": "Leila Bouziane",
+    "date": "2025-10-01",
+    "preview": "Learn about scholarships, loans, and work-study programs available to Moroccan students, and how to maximize your financial aid."
+  },
+  {
+    "title": "Effective Note-Taking Strategies",
+    "category": "Study Tips",
+    "author": "Dr. Youssef Bennis",
+    "date": "2025-09-29",
+    "preview": "Discover methods like Cornell Notes and mind-mapping to organize information and retain it better during exams."
+  },
+  {
+    "title": "How to Write a Strong Moroccan University Application",
+    "category": "Admissions",
+    "author": "Amina Khattabi",
+    "date": "2025-09-27",
+    "preview": "Tips for writing essays, gathering recommendations, and presenting yourself effectively to Moroccan universities."
+  },
+  {
+    "title": "Internship Opportunities in Morocco for STEM Students",
+    "category": "Career Planning",
+    "author": "Imane El Fadil",
+    "date": "2025-09-25",
+    "preview": "Learn where to find internships in tech, engineering, and science fields in Morocco, and how to apply successfully."
+  },
+  {
+    "title": "Managing Stress During Moroccan Exams",
+    "category": "Wellness",
+    "author": "Dr. Fatima Zahra El Amri",
+    "date": "2025-09-23",
+    "preview": "Practical strategies to stay calm, focused, and perform your best during critical exams."
+  },
+  {
+    "title": "Top Universities Abroad Moroccan Students Choose",
+    "category": "International",
+    "author": "Karim El Idrissi",
+    "date": "2025-09-21",
+    "preview": "Insights into the most popular destinations for Moroccan students studying abroad, and what makes them attractive."
+  },
+  {
+    "title": "Budgeting Tips for Moroccan Students",
+    "category": "Financial Aid",
+    "author": "Salma Boukili",
+    "date": "2025-09-19",
+    "preview": "Learn how to manage your expenses effectively while studying, including scholarships, part-time work, and savings strategies."
+  },
+  {
+    "title": "Active Recall vs Passive Reading",
+    "category": "Study Tips",
+    "author": "Dr. Hicham Benali",
+    "date": "2025-09-17",
+    "preview": "Understand why active recall is more effective than passive reading and how to implement it in your study sessions."
+  },
+  {
+    "title": "Navigating Moroccan University Scholarships",
+    "category": "Admissions",
+    "author": "Naima El Khayati",
+    "date": "2025-09-15",
+    "preview": "Learn which scholarships are available in Morocco and how to apply for them successfully."
+  },
+  {
+    "title": "Top Career Paths for Moroccan Engineers",
+    "category": "Career Planning",
+    "author": "Prof. Ahmed Bouazza",
+    "date": "2025-09-13",
+    "preview": "Explore emerging opportunities for engineers in Morocco and how to position yourself for a successful career."
+  },
+  {
+    "title": "Mindfulness Techniques for Students",
+    "category": "Wellness",
+    "author": "Dr. Leila Harizi",
+    "date": "2025-09-11",
+    "preview": "Simple mindfulness exercises to improve focus, reduce stress, and enhance learning efficiency."
+  },
+  {
+    "title": "Studying in France: Advice for Moroccan Students",
+    "category": "International",
+    "author": "Omar El Fassi",
+    "date": "2025-09-09",
+    "preview": "Learn the essential steps to prepare for studying in France and make the most of your experience abroad."
+  },
+  {
+    "title": "Maximizing Student Loans and Grants",
+    "category": "Financial Aid",
+    "author": "Hind Bouziane",
+    "date": "2025-09-07",
+    "preview": "Tips to effectively manage student loans, apply for grants, and reduce financial stress during university."
+  },
+  {
+    "title": "Time Management Tips for Moroccan Students",
+    "category": "Study Tips",
+    "author": "Dr. Nabil Rifi",
+    "date": "2025-09-05",
+    "preview": "Learn to prioritize tasks, avoid procrastination, and make the most of your study time."
+  },
+  {
+    "title": "How to Choose Your Moroccan University Program",
+    "category": "Admissions",
+    "author": "Sara El Khatib",
+    "date": "2025-09-03",
+    "preview": "Guidance on selecting a university program that aligns with your career goals and interests."
+  },
+  {
+    "title": "Tech Careers Growing Fast in Morocco",
+    "category": "Career Planning",
+    "author": "Dr. Youssef Chouaib",
+    "date": "2025-09-01",
+    "preview": "Discover technology sectors in Morocco with high demand and learn how to prepare for them."
+  },
+  {
+    "title": "Healthy Eating for Students",
+    "category": "Wellness",
+    "author": "Dr. Samira El Amrani",
+    "date": "2025-08-30",
+    "preview": "Tips for maintaining a balanced diet while managing busy student schedules."
+  },
+  {
+    "title": "Top Destinations for Moroccan Students Abroad",
+    "category": "International",
+    "author": "Karim Bouziane",
+    "date": "2025-08-28",
+    "preview": "Explore countries where Moroccan students often study and the benefits of each location."
+  },
+  {
+    "title": "Applying for Moroccan Government Scholarships",
+    "category": "Financial Aid",
+    "author": "Leila Fassi",
+    "date": "2025-08-26",
+    "preview": "Step-by-step guide on applying for scholarships offered by Moroccan institutions."
   }
 ]
