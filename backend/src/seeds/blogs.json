@@ -1,0 +1,16 @@
+[
+  {
+    "title": "How to apply for scholarships",
+    "slug": "how-to-apply-for-scholarships",
+    "content": "Step by step guide to scholarship applications.",
+    "tags": ["scholarships","application"],
+    "published": true
+  },
+  {
+    "title": "Top study tips",
+    "slug": "top-study-tips",
+    "content": "Practical study tips for exams.",
+    "tags": ["study","tips"],
+    "published": true
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Global University",
+    "country": "USA",
+    "city": "New York",
+    "website": "https://globaluniversity.example",
+    "description": "A leading university with global programs."
+  },
+  {
+    "name": "Tech Institute",
+    "country": "Germany",
+    "city": "Berlin",
+    "website": "https://techinstitute.example",
+    "description": "Technology-focused institution."
+  }
+]

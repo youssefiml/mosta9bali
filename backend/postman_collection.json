@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "StudyGuide Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Root",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": ["/"]
+        }
+      }
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{ \"name\": \"Tester\", \"email\": \"tester@example.com\", \"password\": \"password\" }"
+        },
+        "url": { "raw": "{{baseUrl}}/api/auth/register", "host": ["{{baseUrl}}"], "path": ["api","auth","register"] }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{ \"email\": \"tester@example.com\", \"password\": \"password\" }" },
+        "url": { "raw": "{{baseUrl}}/api/auth/login", "host": ["{{baseUrl}}"], "path": ["api","auth","login"] }
+      }
+    },
+    {
+      "name": "List Blogs",
+      "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/blogs", "host": ["{{baseUrl}}"], "path": ["api","blogs"] } }
+    },
+    {
+      "name": "List Schools",
+      "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/schools", "host": ["{{baseUrl}}"], "path": ["api","schools"] } }
+    },
+    {
+      "name": "List Scholarships",
+      "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/scholarships", "host": ["{{baseUrl}}"], "path": ["api","scholarships"] } }
+    },
+    {
+      "name": "List Communities",
+      "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/communities", "host": ["{{baseUrl}}"], "path": ["api","communities"] } }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" }
+  ]
+}
