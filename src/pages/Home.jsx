@@ -93,14 +93,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 bg-gray-50">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-12 text-center text-white">
+          <div className="bg-gray-100 text-black py-10 rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Start Your Academic Journey?</h2>
             <p className="text-xl mb-8 opacity-90">Join thousands of students who trust SmartGuidance for their educational success</p>
             <Link
               to="/community"
-              className="inline-block px-8 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
+              className="inline-block px-8 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-900 transition-colors"
             >
               Get Started Today
             </Link>

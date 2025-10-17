@@ -12,7 +12,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import Profile from './pages/Profile';
-
+import ChatbotWidget from './components/ChatbotWidget';
 function App() {
   return (
     <AuthProvider>
@@ -53,7 +53,7 @@ function App() {
               />
             </Routes>
           </main>
-          <Footer />
+          <ChatbotWidget />
         </div>
       </Router>
     </AuthProvider>

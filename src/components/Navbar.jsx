@@ -1,4 +1,4 @@
-import { Menu, X, LogOut, User, User as UserIcon, LayoutDashboard } from 'lucide-react';
+import { Menu, X, LogOut, User, User as UserIcon, LayoutDashboard, BookOpen, Award, Users, School } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -38,19 +38,40 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.path)
-                    ? 'text-blue-600'
-                    : 'text-gray-600 hover:text-blue-600'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              let Icon;
+              switch (link.path) {
+                case '/blogs':
+                  Icon = BookOpen;
+                  break;
+                case '/schools':
+                  Icon = School;
+                  break;
+                case '/scholarships':
+                  Icon = Award;
+                  break;
+                case '/community':
+                  Icon = Users;
+                  break;
+                default:
+                  Icon = null;
+              }
+
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium transition-colors flex items-center gap-2 ${
+                    isActive(link.path)
+                      ? 'text-blue-600'
+                      : 'text-gray-600 hover:text-blue-600'
+                  }`}
+                >
+                  {Icon && <Icon className={`w-4 h-4 ${isActive(link.path) ? 'text-blue-600' : 'text-gray-400'}`} />}
+                  {link.label}
+                </Link>
+              );
+            })}
 
             {user ? (
               <div className="flex items-center gap-4 ml-2 pl-6 border-l border-gray-200">

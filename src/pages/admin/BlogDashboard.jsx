@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Pencil, Trash2, Plus, Save, X } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 
@@ -8,7 +7,6 @@ export default function BlogDashboard() {
   const [editingBlog, setEditingBlog] = useState(null);
   const [newBlog, setNewBlog] = useState(null);
   const { user } = useAuth();
-  const navigate = useNavigate();
 
   useEffect(() => {
     // Load blogs from localStorage or your data source

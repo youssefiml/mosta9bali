@@ -8,8 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <GraduationCap className="w-8 h-8 text-blue-500" />
-              <span className="text-xl font-semibold text-white">SmartGuidance</span>
+              <img src="/src/Mousta9bali_logo.png" alt="SmartGuidance Logo" className="w-90 h-20" />
             </div>
             <p className="text-sm text-gray-400">
               Empowering students with the knowledge and resources they need to succeed in their academic journey.
