@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import slugify from 'slugify';
 
 import connectDB from '../config/db.js';
 import Blog from '../models/Blog.js';
@@ -18,8 +19,7 @@ const __dirname = path.dirname(__filename);
 const run = async () => {
   await connectDB();
 
-  const seedDir = path.resolve(__dirname);
-  const read = (p) => JSON.parse(fs.readFileSync(path.join(seedDir, p), 'utf8'));
+  const read = (p) => JSON.parse(fs.readFileSync(path.join(__dirname, p), 'utf8'));
 
   try {
     await Blog.deleteMany({});
@@ -30,9 +30,14 @@ const run = async () => {
     const blogs = read('blogs.json');
     const schools = read('schools.json');
     const scholarships = read('scholarships.json');
-    const communities = read('communities.json');
+    const communities = read('community.json'); // match your file
 
-    await Blog.insertMany(blogs);
+    const blogsWithSlug = blogs.map(blog => ({
+      ...blog,
+      slug: slugify(blog.title, { lower: true, strict: true })
+    }));
+
+    await Blog.insertMany(blogsWithSlug);
     await School.insertMany(schools);
     await Scholarship.insertMany(scholarships);
     await Community.insertMany(communities);

@@ -50,6 +50,7 @@ function App() {
             </Routes>
           </main>
           <ChatbotWidget />
+          <Footer />
         </div>
       </Router>
     </AuthProvider>

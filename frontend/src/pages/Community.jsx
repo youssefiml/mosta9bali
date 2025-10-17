@@ -55,23 +55,28 @@ export default function Community() {
 
   // Fetch posts from backend with basic error reporting
   useEffect(() => {
-    fetch('http://localhost:5000/api/community')
-      .then(res => {
-        if(!res.ok) {
-          throw new Error('Network/API error: ' + res.status);
-        }
-        return res.json();
-      })
-      .then(data => {
-        setPosts(data);
-        setError('');
-      })
-      });
-   [];
+  fetch('http://localhost:5000/api/communities')
+    .then(res => {
+      if (!res.ok) {
+        throw new Error('Network/API error: ' + res.status);
+      }
+      return res.json();
+    })
+    .then(data => {
+      console.log('Fetched posts:', data); // Debug
+      setPosts(data);
+      setError('');
+    })
+    .catch(err => {
+      console.error('Fetch failed:', err);
+      setError('Fetch failed: ' + err.message);
+    });
+}, []);
+
 
   // Post a new discussion to backend
   const handleNewPost = (postData) => {
-    fetch('http://localhost:5000/api/community', {
+    fetch('http://localhost:5000/api/communities', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(postData),
