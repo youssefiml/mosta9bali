@@ -30,10 +30,7 @@ export default function Login() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <GraduationCap className="w-10 h-10 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">SmartGuidance</span>
-          </Link>
+          
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back</h1>
           <p className="text-gray-600">Sign in to continue your academic journey</p>
         </div>

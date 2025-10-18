@@ -43,10 +43,7 @@ export default function Register() {
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center px-4 py-12">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <GraduationCap className="w-10 h-10 text-blue-600" />
-            <span className="text-2xl font-bold text-gray-900">SmartGuidance</span>
-          </Link>
+          
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Create Account</h1>
           <p className="text-gray-600">Join thousands of students on their academic journey</p>
         </div>

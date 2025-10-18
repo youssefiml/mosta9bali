@@ -1,6 +1,5 @@
+// src/controllers/communityController.js
 import Community from '../models/Community.js';
-import cors from 'cors';
-app.use(cors({ origin: 'http://localhost:3000' }));
 
 export const listCommunities = async (req, res) => {
   const items = await Community.find();
